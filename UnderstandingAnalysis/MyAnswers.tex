@@ -515,7 +515,115 @@ By now we have a 1-1 function $f:(0,1)\to P(\N)$ and a 1-1 function $g:P(\N)\to 
 	Then, any infinite binary sequence represents a valid sequence of choices, and any two binary sequences that differ must differ at some index.
 	So, the two sets represented by different sequences each contain an element that the other does not, and thus are not subsets of eachother.
 	Therefore, we may follow the uncountability arugment for inifinte binary sequences, and conclude that we have constructed an uncountable antichain of $P(\N)$.
+\end{enumerate}
 
+\subsection{Sequences and Series}
+\paragraph{Exercise 2.2.1.}
+The sequence $(1,1,1,\ldots)$ verconges to $2$.
+For another example, the sequence $(1,3,1,3,\ldots)$ is divergent, but it verconges to $2$, and also $100$ and many others.
+So, clearly a sequence can verconge to multiple values.
+To summarize the meaning of vercongence, a sequence verconges to $x$ if all it's elements are at most a finite positive distance from $x$.
+That is, if some $\epsilon > 0$ can be selected so that $|a_n - x| < \epsilon$ for $n\in \N$.
+
+\paragraph{Exercise 2.2.2}
+\begin{enumerate}[(a)]
+	\item 
+	For any $\varepsilon > 0$ let $N > 3/\varepsilon$ so $n > 3/\varepsilon$. 
+	Then $3/n < \varepsilon$ so $3/(25n + 20) < 3/n < \varepsilon$.
+	Therefore $3/(25n+20) = |(2n+1)/(5n+4) - 2/5| = |a_n - 2/5| < \varepsilon$.
+	So $\lim(2n+1)/(5n+4) = 2/5$.
+
+	\item
+	For any $\varepsilon > 0$ let $N > 2/\varepsilon$ so $n > 2/\varepsilon$.
+	Then $2/n < \varepsilon$ and $2/n = 2n^2/n^3 > 2n^2/(n^3+3)$ so $2n^2/(n^3+3) < \varepsilon$.
+	Therefore $|2n^2/(n^3+3) - 0| = |a_n - 0| < \varepsilon$ and so $\lim(2n^2)/(n^3+3) = 0$.
+
+	\item
+	For any $\varepsilon > 0$ let $N > \varepsilon^3$ so for $n \geq N$ we have $n > \varepsilon^3$ as well.
+	Then $\sin(n^2)/\sqrt[3]{n} < 1/\sqrt[3]{n} < \varepsilon$ so $|\sin(n^2)/\sqrt[3]{n} - 0| = |a_n - 0| < \varepsilon$.
+	Therefore $\lim \sin(n^2)/\sqrt[3]{n} = 0$.
+\end{enumerate}
+
+\paragraph{Exercise 2.2.3}
+\begin{enumerate}[(a)]
+	\item A college in the United States where every student is shorter than seven feet.
+	\item A college in the United States where every professor gives at least one student a grade other than A and B.
+	\item That every college in the United States has a student under six feet.
+\end{enumerate}
+
+\paragraph{Exercise 2.2.4}
+\begin{enumerate}[(a)]
+	\item 
+	The sequence $(-1,1,-1,1,\ldots)$ has an infinite number of 1s but does not converge to 1.
+
+	\item
+	If a sequence has an infinite number ones then for any $N \in \N$ we may find $n \geq N$ such that $a_n = 1$.
+	Let $b$ be some convergence target where $b \neq 1$ so $|1 - b| = \varepsilon_0$.
+	Then for some $\varepsilon < \varepsilon_0$ and any $N\in \N$, there will always be some $n \geq N$ where $|a_n - b| = |1 - b| = \varepsilon_0 > \varepsilon$.
+	Therefore it is impossible for a sequence with infinite ones to converge to some $b \neq 1$.
+
+	\item
+	The sequence $(-1,1,-1,1,\ldots)$ is divergent but it contains no sub-sequence of $n=2$ ones. 
+\end{enumerate}
+
+\paragraph{Exercise 2.2.5}
+\begin{enumerate}[(a)]
+	\item 
+	For any $\varepsilon > 0$ let $N = 6$ so for $n\geq N$ it follows that $0 < 5/n < 1$ and thus $a_n = [[5/n]] = 0$.
+	Therefore $\lim [[5/n]] = 0$.
+
+	\item
+	For any $\varepsilon > 0$ let $N = 12$ so $n > 12$ and thus $0 < 12/3n < 1/3$.
+	In that case $4/3 < 12/3n + 4/3 < 5/3$ so $a_n = [[(12+4n)/3n]] = 1$.
+	Therefore $\lim a_n = 1$.
+
+	As seen in these examples, we may sometimes be able to select $N$ that satisfies all $\varepsilon > 0$.
+\end{enumerate}
+
+\paragraph{Exercise 2.2.6}
+	Let $(a_n) \to a$ and $(a_n) \to b$.
+	Now assume for the sake of contradiction that $a \neq b$.
+	Then there exists $N$ so that $|a_n - a| < |a-b|/2$ and $|a_n - b| < |a-b|/2$ for all $n \geq N$.
+	From which it follows that $|a_n - a| + |a_n -b| < |a-b|$.
+	But by the triangle inequality $|a-b| \leq |a_n-a| + |a_n-b|$.
+	So we get the contradiction that $|a_n - a| + |a_n -b| <  |a_n-a| + |a_n-b|$.
+Therefore it must be the case that $a=b$.
+
+\paragraph{Exercise 2.2.7}
+\begin{enumerate}[(a)]
+	\item
+	The sequence $(-1)^n$ is frequently in $\{1\}$ because if $a_n \neq 1$ then $a_{n+1} = 1$.
+
+	\item
+	Eventually is stronger as it always implies frequently.
+
+	\item 
+	A sequence $(a_n)$ converges to $a$ if it's eventually in $V_\varepsilon(a)$ for every $\varepsilon > 0$.
+
+	\item
+	Consider the sequence $(a_n) = (1,2,1,2,\ldots)$ where $(a_n)$ is frequently in $(1.9,2.1)$ but is never eventually in the interval.
+\end{enumerate}
+
+\paragraph{Exercise 2.2.7}
+\begin{enumerate}[(a)]
+	\item
+	The series $(0,1,0,1,\ldots)$ satisfies being zero-heavy for $M=1$.
+	
+	\item
+	If a sequence $(a_n)$ contains a finite number of zeros then there must be $N$ satisfying $a_n \neq 0$ for all $n\geq N$.
+	Such a sequence cannot be zero-heavy because then $a_n \neq 0$ for all $N \leq n \leq N + M$ no matter how $M$ is chosen.
+	Therefore any zer-heavy sequence must contain an infinite number of zeros.
+
+	\item
+	Let $a_{m} = 0$ only for $m = n^2$, to form the sequence $(1,0,0,1,0,0,0,0,1,\ldots)$.
+	Such a sequence contains an infinite number of zeros, but it is not zero-heavy.
+	To see why, let $M \in \N$ be arbitrary and select $N \in \N$ satisfying $N > M$ so that $2N > M$.
+	Then $N^2 + 1 + M < N^2 + 2N + 1 = (N+1)^2$.   
+	Furthermore $a_{N^2} = 0$ so $a_{N^2 + 1} \neq 0$ and the followsing zero appears at $a_{(N+1)^2}$.
+	But $N^2 + 1 \leq N^2 + M + 1 < (N+1)^2$ so there is no $a_n=0$ with $n$ satisfying $N^2+1 \leq n \leq N^2+1 + M$.
+
+	\item
+	A sequence is not zero-heavy if for every $M \in \N$ there is some $N \in \N$ where $a_n \neq 0$ for all $n$ satisfying $N\leq n \leq N+M$.
 \end{enumerate}
 
 \end{document}
